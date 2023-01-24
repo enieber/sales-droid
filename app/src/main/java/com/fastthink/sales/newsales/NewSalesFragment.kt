@@ -1,18 +1,19 @@
-package com.fastthink.sales.home
+package com.fastthink.sales.newsales
 
 import android.os.Bundle
+import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import com.fastthink.sales.R
 import com.fastthink.sales.databinding.FragmentHomeBinding
-import com.fastthink.sales.newsales.NewSalesFragment
+import com.fastthink.sales.databinding.FragmentNewSalesBinding
+import java.util.logging.Logger
 
 
-class HomeFragment : Fragment() {
+class NewSalesFragment : Fragment() {
 
-    private var _binding: FragmentHomeBinding? = null
+    private var _binding: FragmentNewSalesBinding? = null
     private val binding get() = _binding!!
 
     override fun onCreateView(
@@ -20,7 +21,7 @@ class HomeFragment : Fragment() {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        _binding = FragmentHomeBinding.inflate(inflater, container, false)
+        _binding = FragmentNewSalesBinding.inflate(inflater, container, false)
         val view = binding.root
         return view
     }
@@ -36,16 +37,12 @@ class HomeFragment : Fragment() {
     }
 
     private fun initView() {
-        newSaleButtonAction()
-        binding.totalSalesValue.setText("R$ 0,00")
+        addRequestButton()
     }
 
-    private fun newSaleButtonAction() {
-        binding.newSaleAction.setOnClickListener {
-            parentFragmentManager.beginTransaction().replace(
-                R.id.main_container, NewSalesFragment()
-            ).addToBackStack(null)
-                .commit()
+    private fun addRequestButton() {
+        binding.addRequest.setOnClickListener {
+            Log.w("info", "Adding new item")
         }
     }
 }

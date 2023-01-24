@@ -1,13 +1,14 @@
-package com.fastthink.sales.home
+package com.fastthink.sales
 
 import androidx.lifecycle.ViewModel
+import com.fastthink.sales.home.HomeUseCase
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
 import javax.inject.Inject
 
 @HiltViewModel
-class HomeViewModel  @Inject constructor(
+class SalesViewModel  @Inject constructor(
     private val homeUseCase: HomeUseCase
 ) : ViewModel() {
 

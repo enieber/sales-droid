@@ -2,4 +2,7 @@
     <string name="app_name">Sales</string>
     <string name="new_sales">Fazer Nova Venda</string>
     <string name="totalsales">Total de vendas</string>
+    <string name="name_client">Nome do cliente</string>
+    <string name="name_product">Produto</string>
+    <string name="add_request_button">Incluir Pedido</string>
 </resources>
